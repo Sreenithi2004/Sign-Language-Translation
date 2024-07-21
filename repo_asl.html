@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-item {
+    margin: 10px;
+    position: relative;
+  }
+
+  .gallery-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.5);
+  }
+
+  .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-item:hover .description {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+</head>
+<body>
+<h1><center>AMERICAN SIGN LANGUAGE</center></h1>
+<audio autoplay>
+  <source src="..\voice\asl.mp3" type="audio/mpeg">
+</audio>
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="valid\12312_mp4-4_jpg.rf.f7834efe6cea1569e686e30a20b9bea7.jpg" alt="Image 1">
+        <div class="description">
+       
+        </div>
+    </div>
+    <div class="gallery-item">
+        <img src="valid/12312_mp4-7_jpg.rf.8b03e59a4ba0e73bcb9c92ad16112691.jpg" alt="Image 2">
+        <div class="description">
+       
+    </div>
+  </div>
+  <div class="gallery-item">
+    <img src="valid\12312_mp4-10_jpg.rf.f3cc329095a90134d5598eac6d055dd9.jpg" alt="Image 1">
+    <div class="description">
+         
+    </div>
+</div>
+      <div class="gallery-item">
+        <img src="valid\12313_mp4-3_jpg.rf.2b42c5ea77316fa6678d41d404e49140.jpg" alt="Image 2">
+        <div class="description">
+         
+        </div>
+        </div>
+        <div class="gallery-item">
+            <img src="valid\12314_mp4-0_jpg.rf.bc89fc9b78b63ca39058b4fc68a16d13.jpg" alt="Image 1">
+            <div class="description">
+             
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="valid\12314_mp4-1_jpg.rf.105c8177ce79b63d09a0b795ceee28ec.jpg" alt="Image 2">
+            <div class="description">
+             
+            </div>
+        </div>
+            <div class="gallery-item">
+                <img src="valid\12315_mp4-6_jpg.rf.71a676b78d4e8236eceadc8d46ccf20d.jpg" alt="Image 1">
+                <div class="description">
+                 
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img src="valid\12315_mp4-7_jpg.rf.d0fcf8d0e3626191c18391de33460bcd.jpg" alt="Image 2">
+                <div class="description">
+                 
+                </div>
+            </div>
+                <div class="gallery-item">
+                    <img src="valid\12315_mp4-13_jpg.rf.d54b807f888a9ff359b32e1fc46de02e.jpg" alt="Image 1">
+                    <div class="description">
+                     
+                    </div>
+                  </div>
+                  <div class="gallery-item">
+                    <img src="valid\12316_mp4-1_jpg.rf.d889043aba45b208cd01cbb1b26ddcad.jpg" alt="Image 2">
+                    <div class="description">
+                     
+                    </div>
+                </div>
+                    <div class="gallery-item">
+                        <img src="valid\12317_mp4-4_jpg.rf.609ee9f37cd99f6680694c72b3ecf03d.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12318_mp4-2_jpg.rf.546097c850a1b302700135765177339b.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div> 
+                    <div class="gallery-item">
+                        <img src="valid\12318_mp4-5_jpg.rf.f1459d0a72214cacb8bb332c92878108.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12320_mp4-3_jpg.rf.243dd8b6a3302eef02d83b1a8de95b99.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  <div class="gallery-item">
+                        <img src="valid\12320_mp4-7_jpg.rf.dc610e8ee30047ea04952ea4f280ab04.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12320_mp4-12_jpg.rf.d57451e6af63f65ce83255640658d9ac.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  <div class="gallery-item">
+                        <img src="valid\12326_mp4-0_jpg.rf.f71466eda3c8eca0b7656a0b1e13e9a3.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12326_mp4-4_jpg.rf.2e80ee27b2055d7e5731fd894ad8c325.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  <div class="gallery-item">
+                        <img src="valid\12326_mp4-6_jpg.rf.446d4d0830b0eb22b5b2493a5ef3cbd4.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12326_mp4-9_jpg.rf.ae822dca3926b986a1035ba8a4965bf9.jpg" alt="Image 2">
+                        <div class="description">
+                          
+                        </div>  
+                    </div>  <div class="gallery-item">
+                        <img src="valid\12326_mp4-10_jpg.rf.7856973c29f8e37a7ad65ee1541976ec.jpg" alt="Image 1">
+                        <div class="description">
+                          
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12327_mp4-0_jpg.rf.d729cc6fdaef1e779e836a0944c7cf9d.jpg" alt="Image 2">
+                        <div class="description">
+                          
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\12327_mp4-4_jpg.rf.2353ccb48702f9175841c2cd5cca1632.jpg" alt="Image 1">
+                        <div class="description">
+                          
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12327_mp4-14_jpg.rf.71c0ea17ccf2700bb9ac9b0308a66e5a.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div> 
+                    <div class="gallery-item">
+                        <img src="valid\12327_mp4-15_jpg.rf.07d7802e9265109c2331da2582be19cd.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12328_mp4-0_jpg.rf.22fd7e28f7b01a09260a0c9156652360.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\12328_mp4-8_jpg.rf.70387a6334be3f80717357dd222197e4.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12328_mp4-9_jpg.rf.1af0a98e428881291ab95eeb5fff47fc.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\12328_mp4-16_jpg.rf.68ce433c265ef56606de078f08126129.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\12338_mp4-7_jpg.rf.f1d01a57c045f8ac0db225a1cfbacebf.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17709_mp4-3_jpg.rf.2000c9a9839e43fd7ab1456c2f2c51ab.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17709_mp4-7_jpg.rf.2a5799f1f6f8d95162a75185efca9c34.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17710_mp4-0_jpg.rf.904a8df7c808a2682fc91aabc5d2cfe4.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17710_mp4-1_jpg.rf.37d3612bb2ebf66bcfb3f871274c40a4.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17710_mp4-3_jpg.rf.f515704649397f6ff31a7721baffd1b6.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17710_mp4-4_jpg.rf.0ac69352b8c8070f55886773f399b4a7.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17710_mp4-7_jpg.rf.8feee0a6dda886137a738bfe2a753139.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17711_mp4-2_jpg.rf.5da34ccbbf0e8a3a572afe9d8ab5dde3.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17711_mp4-3_jpg.rf.db29bf8d90dc6afbb98885832e0cec8b.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17711_mp4-8_jpg.rf.fd49e6fd803d4341dc337afeed213f46.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17711_mp4-10_jpg.rf.daa0527adc666b307bb8b73dc60cc839.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17712_mp4-0_jpg.rf.865ca5ed3a5e170015633f215c642ff1.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17712_mp4-8_jpg.rf.0dd9ff76fd6f481abc3598e1bb539eff.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17712_mp4-10_jpg.rf.cd06de0334fd2e2cf1d285fb3e8637bd.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17712_mp4-0_jpg.rf.865ca5ed3a5e170015633f215c642ff1.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17712_mp4-8_jpg.rf.0dd9ff76fd6f481abc3598e1bb539eff.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17712_mp4-10_jpg.rf.cd06de0334fd2e2cf1d285fb3e8637bd.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17713_mp4-7_jpg.rf.0770879cdc41b33702521dae47d6fd4e.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17720_mp4-1_jpg.rf.ad2218db80f27cdb99b6252380602316.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17720_mp4-9_jpg.rf.1f8140344cb3a7ac3a868deae03ea0c0.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div>  
+                    <div class="gallery-item">
+                        <img src="valid\17721_mp4-1_jpg.rf.9e48a128a4105993c4c2d791e0b98590.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17722_mp4-4_jpg.rf.849a257c512172df4cd460918600d18a.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div> 
+                    <div class="gallery-item">
+                        <img src="valid\17722_mp4-5_jpg.rf.991756e0b8653e04b718b663de7000e7.jpg" alt="Image 1">
+                        <div class="description">
+                         
+                        </div>
+                      </div>
+                      <div class="gallery-item">
+                        <img src="valid\17722_mp4-10_jpg.rf.68ee52ef0a22e2a0a970d8eb98eca335.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div> 
+                    <div class="gallery-item">
+                        <img src="valid\17722_mp4-14_jpg.rf.f2204c66455e6cd9a79e199abcc41703.jpg" alt="Image 2">
+                        <div class="description">
+                         
+                        </div>  
+                    </div> 
+                    <div class="gallery-item">
+                      <img src="valid\17723_mp4-4_jpg.rf.a405ef0d42704025912738ec88584b50.jpg" alt="Image 2">
+                      <div class="description">
+                       
+                      </div>  
+                  </div> 
+                    
+                  <div class="gallery-item">
+                    <img src="valid\17723_mp4-5_jpg.rf.148b1027ab4b21298501cd58948b99d2.jpg" alt="Image 2">
+                    <div class="description">
+                     
+                    </div>  
+                </div> 
+                <div class="gallery-item">
+                  <img src="valid\17723_mp4-6_jpg.rf.f3b7bfd7f8c0a79e125c78dea012a5b8.jpg" alt="Image 2">
+                  <div class="description">
+                   
+                  </div>  
+              </div> 
+              <div class="gallery-item">
+                <img src="valid\17723_mp4-11_jpg.rf.86beeb8c3b493a322c833054bf61ef05.jpg" alt="Image 2">
+                <div class="description">
+                 
+                </div>  
+            </div> 
+            <div class="gallery-item">
+              <img src="valid\17723_mp4-18_jpg.rf.1f62192cc0196206fd2f9eebcf1c2669.jpg" alt="Image 2">
+              <div class="description">
+               
+              </div>  
+          </div> 
+          <div class="gallery-item">
+            <img src="valid\17724_mp4-5_jpg.rf.d4b6fafe67a7157871444ea48f3dc710.jpg" alt="Image 2">
+            <div class="description">
+             
+            </div>  
+        </div> 
+        <div class="gallery-item">
+          <img src="valid\17733_mp4-3_jpg.rf.e7311d91b9a40114d13f1c44a0402b4e.jpg" alt="Image 2">
+          <div class="description">
+           
+          </div>  
+      </div> 
+      <div class="gallery-item">
+        <img src="valid\17733_mp4-5_jpg.rf.ac9515d83dec75730f591bc39a64988e.jpg" alt="Image 2">
+        <div class="description">
+         
+        </div>  
+    </div> 
+    <div class="gallery-item">
+      <img src="valid\17733_mp4-12_jpg.rf.3fa6fad29af103f1f6deff8cb9e4b652.jpg" alt="Image 2">
+      <div class="description">
+       
+      </div>  
+  </div> 
+  <div class="gallery-item">
+    <img src="valid\17734_mp4-2_jpg.rf.d421c8218b9285b731460d8baaeb7b4b.jpg" alt="Image 2">
+    <div class="description">
+     
+    </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\24940_mp4-3_jpg.rf.022b26928c4b46d7ad57adedae674e27.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\24940_mp4-4_jpg.rf.0a352752a5063a3a6162b8bac3a26d78.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\24940_mp4-9_jpg.rf.5f805ef52c4d1101954e8ea8069c9c0d.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\24941_mp4-2_jpg.rf.3cbc303e650151198b0027a02b0ea487.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\24941_mp4-6_jpg.rf.7d9742a02dd4831d63025c592ab7afbb.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\24941_mp4-8_jpg.rf.5543ab95dd6778ab64b810f61daaff18.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\24941_mp4-9_jpg.rf.48c4f2cb212ea87b59cb800713be901a.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24943_mp4-3_jpg.rf.e415d42e8c5d93792a54ce7c50473a37.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24943_mp4-4_jpg.rf.1a2255eec0b05236837a99404ecb3f7e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24943_mp4-7_jpg.rf.d57053ed28dbf988a33b9eaa9545a54f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24943_mp4-9_jpg.rf.3bec36e946c131ca6e5f5bbf171fe2c3.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24946_mp4-2_jpg.rf.cc372f115aabb3cc75ff2ec5e0a4867a.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24946_mp4-3_jpg.rf.93cf2853974ed6e3a11049fa14e9ed93.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24946_mp4-4_jpg.rf.4c8839fb6e2162315346ce84b9783db9.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24946_mp4-5_jpg.rf.cb3813cd1a376854a70e2d46dea48372.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24946_mp4-7_jpg.rf.196b22ca383292e09e0bd62819818847.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24947_mp4-4_jpg.rf.3dbe68a44ae02ed0cf311b920a29afc6.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24954_mp4-7_jpg.rf.0aea9c4a85163f825138ef7e6a008e57.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24955_mp4-4_jpg.rf.1b3fa0c1f323cbf134edcc762832a025.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24955_mp4-6_jpg.rf.0daa6d2346b5065c800ec62efbf75bbe.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24955_mp4-8_jpg.rf.1e08b5c7e134eb7fcb38070c5bf8769e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24956_mp4-9_jpg.rf.ac1bb628d354dd4217b13e4b8fab8d40.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24961_mp4-0_jpg.rf.1b0dc974fbb3c2bee72bf229813b430f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24961_mp4-5_jpg.rf.bed876932bfa0e40f6ce5d4f4bfe6413.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24962_mp4-2_jpg.rf.0634bef630e37be480229a0a44b91347.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24962_mp4-4_jpg.rf.8e38de608ecf3290ca258c889891a34e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24962_mp4-6_jpg.rf.4926c002de769aa381adc3232b660133.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24973_mp4-1_jpg.rf.985fe0c95862360efa7e40c640f704c4.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24973_mp4-2_jpg.rf.74e82992e69b9ff601e7c96c41465b42.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24973_mp4-5_jpg.rf.d86494564cdd6fe124aba86055ebcb4e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\24973_mp4-7_jpg.rf.368f704ad0c8fb2c50e529c19866e7b4.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\27206_mp4-1_jpg.rf.6156e2681990e0aed9eeb806a07192e5.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\27206_mp4-3_jpg.rf.ec4555afdb93334a47a1880fe115c77e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27206_mp4-4_jpg.rf.21a49b483cd7d040cf4c4536bf136e45.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27206_mp4-9_jpg.rf.9451a55ff9ddfa08b8b7b872b4d80cce.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27207_mp4-5_jpg.rf.e8dd971bb922364f7f1c261dcba94882.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27208_mp4-1_jpg.rf.ff3a483b1bef3cab254c3d0eb9be9fef.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27208_mp4-5_jpg.rf.99cf080c1353ce7191201244bed6e1dd.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27208_mp4-11_jpg.rf.ac0deb45faa9e65a2ee81600b3d6543c.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27209_mp4-2_jpg.rf.5bef896a7b3952c99fdab61fe4fa427e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27209_mp4-3_jpg.rf.5e3c58187f3e52a31a90f548844e10ac.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27209_mp4-5_jpg.rf.3ee6fd8f38621e949e8ab8673015b914.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27213_mp4-3_jpg.rf.dcb6ecc784322907d873baa23c6a9c0f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27213_mp4-8_jpg.rf.60d640e6272fe7c776f15e543626a7c6.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27214_mp4-5_jpg.rf.624989b2eb78d20a947d06ca73f7e031.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27217_mp4-8_jpg.rf.cd5471d77ee0a21a0138d19e60e14eb9.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27217_mp4-10_jpg.rf.0dee77895cb0687cc44654d87b74f00a.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27217_mp4-11_jpg.rf.50fe57c50ee143977f39ae4f69361bf4.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59205_mp4-3_jpg.rf.fc1733b5b442b3758dcef794ce897c84.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\27206_mp4-1_jpg.rf.6156e2681990e0aed9eeb806a07192e5.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59205_mp4-7_jpg.rf.788fa44d916a1b6edc6000c23d74dcc6.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59205_mp4-9_jpg.rf.3558ff01e6de30619a093e2df087645b.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59205_mp4-12_jpg.rf.4a4d1e9901fd7ba5ccfb1699ef8f453c.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59205_mp4-16_jpg.rf.7fa207b3ce02caf0c621059b83cc462f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59206_mp4-1_jpg.rf.b50eb8b5f5d0fa2891c830bbbb7130e1.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59206_mp4-4_jpg.rf.79bdb50d182c013ce390375f0961d245.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59207_mp4-3_jpg.rf.ba1962d80ef3274f78089d949e67bce9.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59207_mp4-5_jpg.rf.ad2c399bc46d233220bd1ed2b4dd4a6f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59208_mp4-2_jpg.rf.f46e62bc6f1ac82f5499d37ed6ac6c58.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59209_mp4-1_jpg.rf.b4e1bb5d8b1927f32caedadf9f5fa522.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59210_mp4-4_jpg.rf.19de1eee47b536aa473f5adc3ce19350.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59210_mp4-5_jpg.rf.9275d6f77328ce0f109ed28e14c44789.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59210_mp4-11_jpg.rf.87a2d3e6af629830fe5b91b281d8754f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59210_mp4-15_jpg.rf.a98145c7c043e22de2e66b21d429a93d.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59211_mp4-3_jpg.rf.bec848ccf9538f5b9a911c0c8c003b9c.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59211_mp4-6_jpg.rf.98653ba3e3feb25c154ec0f789e296cc.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59211_mp4-7_jpg.rf.c77516eb084271f08a1e74c9f868dd5f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59212_mp4-2_jpg.rf.0cfc2515341b6e7293b71beee0e58a78.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59212_mp4-11_jpg.rf.35bdc59419a950dcf54cd82040c6668e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59212_mp4-14_jpg.rf.afd4a5c56350a03dd855eb707592bc04.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59214_mp4-10_jpg.rf.9b122814bef5be0e77c50c38545c6ce9.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59214_mp4-11_jpg.rf.7d56a561812d06c7b636be8a0840a049.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59212_mp4-14_jpg.rf.afd4a5c56350a03dd855eb707592bc04.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59214_mp4-10_jpg.rf.9b122814bef5be0e77c50c38545c6ce9.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59214_mp4-11_jpg.rf.7d56a561812d06c7b636be8a0840a049.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59214_mp4-13_jpg.rf.e27919e9ba057103aff5cbf90dd24834.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59215_mp4-5_jpg.rf.b03c351f51785c696734593428dc759f.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59215_mp4-9_jpg.rf.16f24ce80c7564dc991092bf53a38080.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+<div class="gallery-item">
+  <img src="valid\59215_mp4-12_jpg.rf.0e5b90e8ff64c841643509da63a4ed63.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59215_mp4-13_jpg.rf.3b94f9b43c36163f3f28c7abdd471ec8.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59216_mp4-5_jpg.rf.fc773026216092e375b3e70dbae3f80a.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59216_mp4-9_jpg.rf.40e48888dccbceda50554dfe29f4c417.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+ <div class="gallery-item">
+  <img src="valid\59216_mp4-11_jpg.rf.947c5663058b4b8bd069f499f51cad24.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\59219_mp4-0_jpg.rf.be85e6fa8506c9db57bc46081b7cb78e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\59216_mp4-9_jpg.rf.40e48888dccbceda50554dfe29f4c417.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\59216_mp4-11_jpg.rf.947c5663058b4b8bd069f499f51cad24.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\59219_mp4-0_jpg.rf.be85e6fa8506c9db57bc46081b7cb78e.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\59219_mp4-6_jpg.rf.4b1fae826a7d2160dba9d5deef43d45a.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59219_mp4-8_jpg.rf.cb560f211b3e5e9c30223c488d9574ab.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> <div class="gallery-item">
+  <img src="valid\59219_mp4-13_jpg.rf.57f53129cb335d1c523cd4073e2f0e53.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\59219_mp4-14_jpg.rf.dc933d057f159acca3974a27fe093658.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\65540_mp4-8_jpg.rf.83e34c22c60a9f3884883bc0a46a3bad.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\65824_mp4-2_jpg.rf.65c9e868a16e4f000011072e744c4f58.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div>  <div class="gallery-item">
+  <img src="valid\65889_mp4-7_jpg.rf.961723ad5ff29bc50ba4021079c62b0a.jpg" alt="Image 2">
+  <div class="description">
+   
+  </div>  
+</div> 
+
+  <!-- Add more gallery items here -->
+</div>
+
+</body>
+</html>

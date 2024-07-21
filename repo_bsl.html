@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-item {
+    margin: 10px;
+    position: relative;
+  }
+
+  .gallery-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.5);
+  }
+
+  .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-item:hover .description {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+</head>
+<body>
+    <h1><center>BRITISH SIGN LANGUAGE</center></h1>
+    <audio autoplay>
+      <source src="../voice/bsl.mp3" type="audio/mpeg">
+      </audio>
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="bsl_img/3-6-_jpg.rf.e0c5747670d166a20e972bfd65924f28.jpg" alt="Image 1">
+    <div class="description">
+    </div>
+  </div>
+    <div class="gallery-item">
+      <img src="bsl_img/3-9-_jpg.rf.69ba6086875d4331abb5308c3503ca7e.jpg" alt="Image 1">
+      <div class="description">
+      </div>
+    </div>
+    <div class="gallery-item">
+        <img src="bsl_img/mobile-3-_jpg.rf.9c7433e08040f7e7c80bdfd20cfaf988.jpg" alt="Image 1">
+        <div class="description">
+        </div>
+      </div>
+        <div class="gallery-item">
+          <img src="bsl_img/no-7-_jpg.rf.8d3e53556675e7f81faa1886d28b5a80.jpg" alt="Image 1">
+          <div class="description">
+          </div>
+        </div>
+        <div class="gallery-item">
+            <img src="bsl_img/sorry-9-_jpg.rf.8c0dca775ed5ec869412cb3ef59b966d.jpg" alt="Image 1">
+            <div class="description">
+            </div>
+          </div>
+            <div class="gallery-item">
+              <img src="bsl_img/today-4-_jpg.rf.62f58f6b4cfc9333ced1de789bb5c5b0.jpg" alt="Image 1">
+              <div class="description">
+              </div>
+            </div>
+            <div class="gallery-item">
+                <img src="bsl_img/today-4-_jpg.rf.62f58f6b4cfc9333ced1de789bb5c5b0.jpg" alt="Image 1">
+                <div class="description">
+                </div>
+              </div>
+                <div class="gallery-item">
+                  <img src="bsl_img/want-6-_jpg.rf.b05c1c8620e93a3811cc690d6821cd64.jpg" alt="Image 1">
+                  <div class="description">
+                  </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bsl_img/weak-5-_jpg.rf.2cb3d190e55a4e8aa982f29352c7e8ba.jpg" alt="Image 1">
+                    <div class="description">
+                    </div>
+                  </div>
+                    <div class="gallery-item">
+                      <img src="bsl_img/your-6-_jpg.rf.940cd04fc2ede1f9a6d77ab2b19a7bf8.jpg" alt="Image 1">
+                      <div class="description">
+                      </div>
+                    </div>
+    <div class="gallery-item">
+      <img src="bsl_img/6-1-_jpg.rf.02ff8bc373db1db8058bf7bf9d60601a.jpg" alt="Image 2">
+      <div class="description">
+      </div>
+  </div>
+  <div class="gallery-item">
+    <img src="bsl_img/6-5-_jpg.rf.9e91934d7e73a73eaca7f61f374f7e36.jpg" alt="Image 2">
+    <div class="description">
+    </div>
+  </div>
+    <div class="gallery-item">
+      <img src="bsl_img/6-6-_jpg.rf.fa7b53c864a0e7eec824e90cd6de3b97.jpg" alt="Image 1">
+      <div class="description">
+      </div>
+    </div>
+  <div class="gallery-item">
+    <img src="bsl_img/7-5-_jpg.rf.e997d6716c5c9ac9c11814dfdb5d62d7.jpg" alt="Image 1">
+    <div class="description">
+    </div>
+  </div>
+  <div class="gallery-item">
+    <img src="bsl_img/7-10-_jpg.rf.6665022590df4f67a597158e2e415f47.jpg" alt="Image 2">
+    <div class="description">
+    </div>
+  </div>
+  <div class="gallery-item">
+      <img src="bsl_img/a-1-_jpg.rf.3745931a8f8dd54d69c0f035590a19d7.jpg" alt="Image 2">
+      <div class="description">
+      </div>
+    </div>
+    <div class="gallery-item">
+          <img src="bsl_img/a-7-_jpg.rf.434db57f312b7ca4e7a44118b1ac71d2.jpg" alt="Image 1">
+          <div class="description">
+          </div>
+    </div>
+    <div class="gallery-item">
+          <img src="bsl_img/a-8-_jpg.rf.dd66f80c9de15c2799cfebe344545d6e.jpg" alt="Image 2">
+          <div class="description">
+          </div>
+    </div>
+    <div class="gallery-item">
+          <img src="bsl_img/apple-7-_jpg.rf.88e140fa037ce2f25553eb6732e6d239.jpg" alt="Image 2">
+          <div class="description">
+    </div>
+    </div>
+        <div class="gallery-item">
+            <img src="bsl_img/brother-10-_jpg.rf.143b889f806ee61c79c0663deaa870a8.jpg" alt="Image 2">
+            <div class="description">
+            </div>
+    </div>
+    <div class="gallery-item">
+            <img src="bsl_img/c-3-_jpg.rf.54b6a5607e14c70274b390d199921ca6.jpg" alt="Image 1">
+            <div class="description">
+            </div>
+    </div>
+    <div class="gallery-item">
+            <img src="bsl_img/can-4-_jpg.rf.fdf8c60d33cc8a1e16dcab1f78ebbfc0.jpg" alt="Image 2">
+            <div class="description">
+            </div>
+    </div>
+    <div class="gallery-item">
+            <img src="bsl_img/can-9-_jpg.rf.e97d9131f416524724870c5bdbc896a3.jpg" alt="Image 2">
+            <div class="description">
+            </div>
+    </div>
+    <div class="gallery-item">
+              <img src="bsl_img/can-10-_jpg.rf.ec5503ba8ed678cfc1a019177c284817.jpg" alt="Image 2">
+              <div class="description">
+              </div>
+    </div>
+            <div class="gallery-item">
+              <img src="bsl_img/expensive-6-_jpg.rf.a5b66c33cf8010031fdecf9de6ad94f3.jpg" alt="Image 2">
+              <div class="description">
+              </div>
+    </div>
+    <div class="gallery-item">
+                <img src="bsl_img/expensive-8-_jpg.rf.9badb1468e7476a26844e49941f4e5b1.jpg" alt="Image 2">
+                <div class="description">
+                </div>
+    </div>
+    <div class="gallery-item">
+                <img src="bsl_img/expensive-9-_jpg.rf.16786af8ace5e1f729a5ebc5e97a987e.jpg" alt="Image 2">
+                <div class="description">
+                </div>
+    </div>
+    <div class="gallery-item">
+                  <img src="bsl_img/get-5-_jpg.rf.5473eba9073857fa06a9ec417fa31c00.jpg" alt="Image 2">
+                  <div class="description">
+                  </div>
+    </div>
+    <div class="gallery-item">
+                  <img src="bsl_img/get-8-_jpg.rf.df2fa7bd492a924ef990e37c9031f575.jpg" alt="Image 2">
+                  <div class="description">
+                  </div>
+    </div>
+    <div class="gallery-item">
+                  <img src="bsl_img/good-9-_jpg.rf.397fd26a97d614a86a2a71c591f00b6e.jpg" alt="Image 2">
+                  <div class="description">
+                  </div>
+    </div>
+    <div class="gallery-item">
+                    <img src="bsl_img/happy-3-_jpg.rf.ce61b47deb3d6ba92938d1cef6035569.jpg" alt="Image 2">
+                    <div class="description">
+                    </div>
+    </div>
+   <div class="gallery-item">
+                    <img src="bsl_img/happy-4-_jpg.rf.bed06e805b1f8af1509514d3ed1806ae.jpg" alt="Image 2">
+                    <div class="description">
+                    </div>
+    </div>
+    <div class="gallery-item">
+                      <img src="bsl_img/happy-5-_jpg.rf.1be9a1b52fa6aecb6a2816f7aeefe5ee.jpg" alt="Image 2">
+                      <div class="description">
+                      </div>
+    </div>
+    <div class="gallery-item">
+                    <img src="bsl_img/happy-6-_jpg.rf.87d9d85a23a28d6cbdd043857a53582b.jpg" alt="Image 2">
+                    <div class="description">
+                    </div>
+    </div>
+   <div class="gallery-item">
+                    <img src="bsl_img/happy-9-_jpg.rf.f778c7171d16c7a6ebe612f3ad18d731.jpg" alt="Image 2">
+                    <div class="description">
+                    </div>
+    </div>
+    <div class="gallery-item">
+                      <img src="bsl_img/hi-2-_jpg.rf.5caa806934477b704a15a626ec9dc31f.jpg" alt="Image 2">
+                      <div class="description">
+                      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="bsl_img/i-5-_jpg.rf.5d40dced89218114f9a1eeb856992171.jpg" alt="Image 2">
+      <div class="description">
+      </div>
+    </div>
+    <div class="gallery-item">
+        <img src="bsl_img/love-4-_jpg.rf.8f5a8a6f643090f3b92f08594f7d4d78.jpg" alt="Image 2">
+        <div class="description">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

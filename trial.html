@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive World Map</title>
+   <h1><b>SIGN LANGUAGE MAP</h1></b>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>   
+        #search-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #searchInput {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 200px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 4px rgba(76, 175, 80, 0.8);
+        }
+        #map {
+            height: 600px;
+        }
+        #location-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color:#4CAF50;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        #close-btn {
+            cursor: pointer;
+            float: right;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+<div id="location-info" style="display: none;"></div>
+<div id="search-bar">
+    <input type="text" id="searchInput" placeholder="Search for a country" oninput="searchCountry()">
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // Initialize Leaflet map
+    var map = L.map('map').setView([0, 0], 2);
+    
+    // Add the base tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Sample locations with sign language information
+    var locations = [
+        { 
+            country: "Bangladesh",
+            coordinates: [23.684994, 90.356331], 
+            description: "Bengali Sign Language (BdSL) is used in Bangladesh.",
+            link: "bangladesh.html"
+        },
+        { 
+            country: "China",
+            coordinates: [35.8617, 104.1954], 
+            description: "Chinese Sign Language (CSL) is used in China.",
+            link: "china.html"
+        },
+        // Add more countries with their coordinates, descriptions, and links
+        { 
+            country: "America",
+            coordinates: [37.0902, -95.7129], 
+            description: "American Sign Language (ASL) is used in the United States.",
+            link: "asl.html"
+        },
+        { 
+            country: "Australia",
+            coordinates: [-25.2744, 133.7751], 
+            description: "Australian Sign Language (Auslan) is used in Australia.",
+            link: "ausl.html"
+        },
+        { 
+            country: "United Kingdom",
+            coordinates: [55.3781, -3.4360], 
+            description: "British Sign Language (BSL) is used in the United Kingdom.",
+            link: "bsl.html"
+        },
+        { 
+            country: "India",
+            coordinates: [20.5937, 78.9629], 
+            description: "Indian Sign Language (ISL) is used in India.",
+            link: "isl.html"
+        },
+        // Add more locations
+	{ 
+            country: "Japan",
+            coordinates: [36.2048, 138.2529], 
+            description: "Japanese Sign Language (JSL) is used in Japan."
+        },
+        { 
+            country: "South Korea",
+            coordinates: [35.9078, 127.7669], 
+            description: "Korean Sign Language (KSL) is used in South Korea."
+        },
+        { 
+            country: "Mexico",
+            coordinates: [23.6345, -102.5528], 
+            description: "Mexican Sign Language (LSM) is used in Mexico."
+        },
+        { 
+            country: "Brazil",
+            coordinates: [-14.2350, -51.9253], 
+            description: "Brazilian Sign Language (LIBRAS) is used in Brazil."
+        },
+        { 
+            country: "Italy",
+            coordinates: [41.8719, 12.5674], 
+            description: "Italian Sign Language (LIS) is used in Italy."
+        },
+        { 
+            country: "Russia",
+            coordinates: [61.5240, 105.3188], 
+            description: "Russian Sign Language (RSL) is used in Russia."
+        },
+        { 
+            country: "Spain",
+            coordinates: [40.4637, -3.7492], 
+            description: "Spanish Sign Language (LSE) is used in Spain."
+        },
+        { 
+            country: "Argentina",
+            coordinates: [-38.4161, -63.6167], 
+            description: "Argentinian Sign Language (LSA) is used in Argentina."
+        },
+        { 
+            country: "Nigeria",
+            coordinates: [9.0820, 8.6753], 
+            description: "Nigerian Sign Language (NSL) is used in Nigeria."
+        },
+        { 
+            country: "Saudi Arabia",
+            coordinates: [23.8859, 45.0792], 
+            description: "Saudi Sign Language is used in Saudi Arabia."
+        },
+        { 
+            country: "Turkey",
+            coordinates: [38.9637, 35.2433], 
+            description: "Turkish Sign Language (TID) is used in Turkey."
+        },
+        { 
+            country: "Iran",
+            coordinates: [32.4279, 53.6880], 
+            description: "Persian Sign Language is used in Iran."
+        },
+        { 
+        country: "Portugal",
+        coordinates: [39.3999, -8.2245], 
+        description: "Portuguese Sign Language (LGP) is used in Portugal."
+    },
+    { 
+        country: "Ireland",
+        coordinates: [53.1424, -7.6921], 
+        description: "Irish Sign Language (ISL) is used in Ireland."
+    },
+    { 
+        country: "New Zealand",
+        coordinates: [-40.9006, 174.8860], 
+        description: "New Zealand Sign Language (NZSL) is used in New Zealand."
+    },
+    { 
+        country: "Austria",
+        coordinates: [47.5162, 14.5501], 
+        description: "Austrian Sign Language (ÖGS) is used in Austria."
+    },
+    { 
+        country: "Switzerland",
+        coordinates: [46.8182, 8.2275], 
+        description: "Swiss-German Sign Language (DSGS) is used in Switzerland."
+    },
+    { 
+        country: "Czech Republic",
+        coordinates: [49.8175, 15.4729], 
+        description: "Czech Sign Language (CZSL) is used in the Czech Republic."
+    },
+    { 
+        country: "Slovakia",
+        coordinates: [48.6690, 19.6990], 
+        description: "Slovak Sign Language (SZJ) is used in Slovakia."
+    },
+    { 
+        country: "Hungary",
+        coordinates: [47.1625, 19.5033], 
+        description: "Hungarian Sign Language (HJ) is used in Hungary."
+    },
+    { 
+        country: "Poland",
+        coordinates: [51.9194, 19.1451], 
+        description: "Polish Sign Language (PJM) is used in Poland."
+    },
+    { 
+        country: "Romania",
+        coordinates: [45.9432, 24.9668], 
+        description: "Romanian Sign Language (RSL) is used in Romania."
+    },
+    { 
+        country: "Bulgaria",
+        coordinates: [42.7339, 25.4858], 
+        description: "Bulgarian Sign Language (BISL) is used in Bulgaria."
+    },
+    { 
+        country: "Croatia",
+        coordinates: [45.1000, 15.2000], 
+        description: "Croatian Sign Language (HZJ) is used in Croatia."
+    },
+    { 
+        country: "Serbia",
+        coordinates: [44.0165, 21.0059], 
+        description: "Serbian Sign Language (SPJ) is used in Serbia."
+    },
+    { 
+        country: "Bosnia and Herzegovina",
+        coordinates: [43.9159, 17.6791], 
+        description: "Bosnian Sign Language (BZJ) is used in Bosnia and Herzegovina."
+    },
+    { 
+        country: "Montenegro",
+        coordinates: [42.7087, 19.3744], 
+        description: "Montenegrin Sign Language (CNZJ) is used in Montenegro."
+    },
+    { 
+        country: "Albania",
+        coordinates: [41.1533, 20.1683], 
+        description: "Albanian Sign Language (SQJ) is used in Albania."
+    },
+    { 
+        country: "Macedonia (FYROM)",
+        coordinates: [41.6086, 21.7453], 
+        description: "Macedonian Sign Language (MKJ) is used in Macedonia."
+    },
+    { 
+        country: "Ghana",
+        coordinates: [7.9465, -1.0232], 
+        description: "Ghanaian Sign Language (GHSL) is used in Ghana."
+    },
+    { 
+        country: "Kenya",
+        coordinates: [1.2921, 36.8219], 
+        description: "Kenyan Sign Language (KSL) is used in Kenya."
+    },
+    { 
+        country: "Uganda",
+        coordinates: [1.3733, 32.2903], 
+        description: "Ugandan Sign Language (USL) is used in Uganda."
+    },
+    { 
+        country: "Tanzania",
+        coordinates: [-6.3690, 34.8888], 
+        description: "Tanzanian Sign Language (TZSL) is used in Tanzania."
+    },
+    { 
+        country: "Ethiopia",
+        coordinates: [9.1450, 40.4897], 
+        description: "Ethiopian Sign Language (EthSL) is used in Ethiopia."
+    },
+    { 
+        country: "South Sudan",
+        coordinates: [6.8769, 31.3069], 
+        description: "South Sudanese Sign Language (SSSL) is used in South Sudan."
+    },
+    { 
+        country: "Rwanda",
+        coordinates: [-1.9403, 29.8739], 
+        description: "Rwandan Sign Language (RSL) is used in Rwanda."
+    },
+    { 
+        country: "Zimbabwe",
+        coordinates: [-19.0154, 29.1549], 
+        description: "Zimbabwean Sign Language (ZSL) is used in Zimbabwe."
+    },
+    { 
+        country: "Zambia",
+        coordinates: [-13.1339, 27.8493], 
+        description: "Zambian Sign Language (ZSL) is used in Zambia."
+    },
+    { 
+        country: "Malaysia",
+        coordinates: [4.2105, 101.9758], 
+        description: "Malaysian Sign Language (BIM) is used in Malaysia."
+    },
+    { 
+        country: "Singapore",
+        coordinates: [1.3521, 103.8198], 
+        description: "Singapore Sign Language (SgSL) is used in Singapore."
+    }, 
+    { 
+        country: "Angola",
+        coordinates: [-11.2027, 17.8739], 
+        description: "Angolan Sign Language (LGPA) is used in Angola."
+    },
+    { 
+        country: "Botswana",
+        coordinates: [-22.3285, 24.6849], 
+        description: "Botswana Sign Language (BSL) is used in Botswana."
+    },
+    { 
+        country: "Cameroon",
+        coordinates: [7.3697, 12.3547], 
+        description: "Cameroonian Sign Language (CSN) is used in Cameroon."
+    },
+    { 
+        country: "Chile",
+        coordinates: [-35.6751, -71.5430], 
+        description: "Chilean Sign Language (LSCH) is used in Chile."
+    },
+    { 
+        country: "Colombia",
+        coordinates: [4.5709, -74.2973], 
+        description: "Colombian Sign Language (LSC) is used in Colombia."
+    },
+    { 
+        country: "Costa Rica",
+        coordinates: [9.7489, -83.7534], 
+        description: "Costa Rican Sign Language (LESCO) is used in Costa Rica."
+    },
+    { 
+        country: "Cuba",
+        coordinates: [21.5218, -77.7812], 
+        description: "Cuban Sign Language (LSC) is used in Cuba."
+    },
+    { 
+        country: "Dominican Republic",
+        coordinates: [18.7357, -70.1627], 
+        description: "Dominican Sign Language (LESDO) is used in the Dominican Republic."
+    },
+    { 
+        country: "Ecuador",
+        coordinates: [-1.8312, -78.1834], 
+        description: "Ecuadorian Sign Language (LSE) is used in Ecuador."
+    },
+    { 
+        country: "El Salvador",
+        coordinates: [13.7942, -88.8965], 
+        description: "Salvadoran Sign Language (LESHO) is used in El Salvador."
+    },
+    { 
+        country: "Guatemala",
+        coordinates: [15.7835, -90.2308], 
+        description: "Guatemalan Sign Language (LESGUA) is used in Guatemala."
+    },
+    { 
+        country: "Honduras",
+        coordinates: [15.1990, -86.2419], 
+        description: "Honduran Sign Language (LESHO) is used in Honduras."
+    },
+    { 
+        country: "Jamaica",
+        coordinates: [18.1096, -77.2975], 
+        description: "Jamaican Sign Language (JSL) is used in Jamaica."
+    },
+    { 
+        country: "Nicaragua",
+        coordinates: [12.8654, -85.2072], 
+        description: "Nicaraguan Sign Language (ISN) is used in Nicaragua."
+    },
+    { 
+        country: "Panama",
+        coordinates: [8.5379, -80.7821], 
+        description: "Panamanian Sign Language (LESP) is used in Panama."
+    },
+    ];
+
+    // Add markers for each location
+    locations.forEach(function(location) {
+        var marker = L.marker(location.coordinates).addTo(map);
+        marker.bindPopup(location.country);
+        marker.on('click', function(e) {
+            showLocationInfo(location);
+        });
+    });
+
+    function showLocationInfo(location) {
+        var infoDiv = document.getElementById('location-info');
+        infoDiv.innerHTML = '<h2>' + location.country + '</h2><p>' + location.description + '</p><a href="' + location.link + '">Learn more</a>' + '<span id="close-btn" onclick="closeLocationInfo()">✖</span>';
+
+        infoDiv.style.display = 'block';
+    }
+
+    function closeLocationInfo() {
+        document.getElementById('location-info').style.display = 'none';
+    }
+
+    // Search functionality
+    function searchCountry() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        var found = false;
+        locations.forEach(function(location) {
+            if (location.country.toUpperCase().indexOf(filter) > -1) {
+                map.setView(location.coordinates, 5); // Set view to the searched country
+                showLocationInfo(location);
+                found = true;
+            }
+        });
+        if (!found) {
+            closeLocationInfo();
+        }
+    }
+</script>
+
+</body>
+</html>
