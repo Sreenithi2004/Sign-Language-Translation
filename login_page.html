@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up & Sign In Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio autoplay>
+        <source src="voice/login.mp3" type="audio/mpeg">
+    </audio>
+    <div id="container" class="container">
+        <!-- FORM SECTION -->
+        <div class="row">
+            <!-- SIGN UP -->
+            <div class="col align-items-center flex-col sign-up">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-up">
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" id="usernameSignup" placeholder="Username">
+                            <span id="usernameError" class="error"></span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input type="email" id="emailSignup" placeholder="Email">
+                            <span id="emailError" class="error"></span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" id="passwordSignup" placeholder="Password">
+                            <span id="passwordError" class="error"></span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" id="confirmPasswordSignup" placeholder="Confirm password">
+                            <span id="confirmPasswordError" class="error"></span>
+                        </div>
+                        <button onclick="validateSignup()">Sign up</button>
+                        <p>
+                            <span>Already have an account?</span>
+                            <b onclick="toggle()" class="pointer">Login here</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- END SIGN UP -->
+            <!-- SIGN IN -->
+            <div class="col align-items-center flex-col sign-in">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-in">
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" id="usernameSignin" placeholder="Username" required>
+                            <span id="usernameSigninError" class="error"></span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" id="passwordSignin" placeholder="Password"required>
+                            <span id="passwordSigninError" class="error"></span>
+                        </div>
+                        <button onclick="validateSignin()">Login</button>
+                        <p><b>Forgot password?</b></p>
+                        <p>
+                            <span>Don't have an account?</span>
+                            <b onclick="toggle()" class="pointer">Sign up here</b>
+                        </p>
+                        <p><b><a href='guestlogin_page.html' style="color:black" >GUEST LOGIN</a></b></p>
+                    </div>
+                </div>
+                <div class="form-wrapper"></div>
+            </div>
+            <!-- END SIGN IN -->
+        </div>
+        <!-- END FORM SECTION -->
+        <!-- CONTENT SECTION -->
+        <div class="row content-row">
+            <!-- SIGN IN CONTENT -->
+            <div class="col align-items-center flex-col">
+                <div class="text sign-in">
+                    <h2>Welcome</h2>
+                </div>
+                <div class="img sign-in"></div>
+            </div>
+            <!-- END SIGN IN CONTENT -->
+            <!-- SIGN UP CONTENT -->
+            <div class="col align-items-center flex-col">
+                <div class="img sign-up"></div>
+                <div class="text sign-up">
+                    <h2>Join with us</h2>
+                </div>
+            </div>
+            <!-- END SIGN UP CONTENT -->
+        </div>
+        <!-- END CONTENT SECTION -->
+    </div>
+
+    <script src="text.js"></script>
+    <script>
+        function validateSignup() {
+            // Reset error messages
+            document.getElementById('usernameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+    
+            // Get input values
+            var username = document.getElementById('usernameSignup').value.trim();
+            var email = document.getElementById('emailSignup').value.trim();
+            var password = document.getElementById('passwordSignup').value.trim();
+            var confirmPassword = document.getElementById('confirmPasswordSignup').value.trim();
+    
+            // Validation rules
+            var isValid = true;
+    
+            if (username === '') {
+                document.getElementById('usernameError').textContent = 'Username is required';
+                isValid = false;
+            }
+    
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            }
+    
+            if (password === '') {
+                document.getElementById('passwordError').textContent = 'Password is required';
+                isValid = false;
+            }
+    
+            if (confirmPassword === '') {
+                document.getElementById('confirmPasswordError').textContent = 'Confirm password is required';
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                isValid = false;
+            }
+    
+            // Submit the form if all inputs are valid
+            
+            if (isValid) {
+                //alert('Sign up successful!');
+                // Send form data to the PHP script using AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'conn.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Handle the response from the server
+                        alert(xhr.responseText);
+                    }
+                };
+                xhr.send('action=signup&username=' + encodeURIComponent(username) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
+            }
+        }
+    
+        function validateSignin() {
+            var username = document.getElementById("usernameSignin").value;
+            var password = document.getElementById("passwordSignin").value;
+    
+            // Send form data to the PHP script using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'conn.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle the response from the server
+                    if (xhr.responseText.includes('Success-admin')) {
+                        // Redirect to admin page
+                        alert('Admin sign in successful!');
+                        window.location.href = "http://localhost:9966/";
+                    } else if(xhr.responseText.includes('Success-user')) {
+                        // Redirect to user page
+                        alert('User sign in successful!');
+                        window.location.href = "translator_page.html";
+                    } else if(xhr.responseText === 'Failure') {
+                        // Handle incorrect credentials
+                        alert('Invalid username or password!');
+                    } else {
+                        // Handle other cases or errors
+                        alert('An error occurred. Please try again later.');
+                    }
+                }
+            };
+            xhr.send('action=signin&username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password));
+        }
+    </script>
+    
+</body>
+</html>
+    

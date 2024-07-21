@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translation System</title>
+    <style>
+        body {
+            background-color: #4EA685;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center align text */
+        }
+        h1 {
+            margin-top: 20px; /* Add some space at the top */
+        }
+        h2 {
+            margin-top: 40px; /* Add space between heading and options */
+        }
+        select,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: #4EA685;
+            cursor: pointer;
+        }
+        select:focus,
+        button:focus {
+            outline: none; /* Remove focus outline */
+        }
+        #menuBar {
+            margin-top: 20px; /* Add space between heading and menu bar */
+            display: flex;
+            justify-content: center; /* Center align items horizontally */
+        }
+        #captureButton,
+        #uploadInput {
+            margin: 0 10px; /* Add space between buttons */
+        }
+        .capture-upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items vertically */
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items vertically */
+            margin-top: 20px;
+        }
+        .timestamp {
+            margin-top: 10px;
+        }
+        .uploaded-image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-name {
+            margin-top: 10px;
+            background-color: #4EA685;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Language Translation System</h1>
+
+    <h2>Select an Option:</h2>
+
+    <!-- Option Menu -->
+    <div id="menuBar">
+        <div class="capture-upload-container">
+            <select id="optionMenu">
+                <option value="capture">Capture Video</option>
+                <option value="upload">Upload Photo/Video</option>
+            </select>
+            <button id="captureButton" style="display: none;">Start Capture</button>
+            <input type="file" accept="image/*,video/*" id="uploadInput" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Uploaded Image Display -->
+    <div id="uploadedImageContainer"></div>
+
+    <!-- Video Capture Section -->
+    <div id="captureSection" style="display: none;">
+        <div class="video-container">
+            <video id="videoElement" width="400" height="300" style="display:block;"></video>
+            <canvas id="canvasElement" width="400" height="300" style="display:none;"></canvas>
+            <div class="timestamp" id="timestamp"></div>
+        </div>
+        <div class="video-controls">
+            <button id="playPauseButton">Play/Pause</button>
+            <button id="stopButton">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        // Option menu
+        const optionMenu = document.getElementById('optionMenu');
+        const captureSection = document.getElementById('captureSection');
+        const captureButton = document.getElementById('captureButton');
+        const uploadInput = document.getElementById('uploadInput');
+        const videoElement = document.getElementById('videoElement');
+        const canvasElement = document.getElementById('canvasElement');
+        const playPauseButton = document.getElementById('playPauseButton');
+        const stopButton = document.getElementById('stopButton');
+        const timestamp = document.getElementById('timestamp');
+        const uploadedImageContainer = document.getElementById('uploadedImageContainer');
+        const constraints = {
+            video: true
+        };
+
+        optionMenu.addEventListener('change', () => {
+            const selectedOption = optionMenu.value;
+            if (selectedOption === 'capture') {
+                captureSection.style.display = 'block';
+                captureButton.style.display = 'block';
+                uploadInput.style.display = 'none';
+            } else if (selectedOption === 'upload') {
+                captureSection.style.display = 'none';
+                captureButton.style.display = 'none';
+                uploadInput.style.display = 'block';
+            }
+        });
+
+        // Capture video
+        captureButton.addEventListener('click', async () => {
+            try {
+                const mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+                videoElement.srcObject = mediaStream;
+                videoElement.play();
+            } catch (err) {
+                console.error('Error accessing media devices.', err);
+            }
+        });
+
+        // Play/Pause button functionality
+        playPauseButton.addEventListener('click', () => {
+            if (videoElement.paused) {
+                videoElement.play();
+            } else {
+                videoElement.pause();
+            }
+        });
+
+        // Stop button functionality
+        stopButton.addEventListener('click', () => {
+            videoElement.pause();
+            videoElement.currentTime = 0;
+        });
+
+        // Display timestamp
+        videoElement.addEventListener('timeupdate', () => {
+            const minutes = Math.floor(videoElement.currentTime / 60);
+            const seconds = Math.floor(videoElement.currentTime - minutes * 60);
+            timestamp.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        });
+
+        // Take snapshot when video is playing
+        videoElement.addEventListener('play', () => {
+            const context = canvasElement.getContext('2d');
+            const captureInterval = setInterval(() => {
+                context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+            }, 1000); // Adjust the interval as needed
+
+            // Stop capture after 10 seconds
+            setTimeout(() => {
+                clearInterval(captureInterval);
+            }, 10000); // Adjust the duration as needed
+        });
+
+        // Handle file upload
+        uploadInput.addEventListener('change', () => {
+            const file = uploadInput.files[0];
+            if (file) {
+                const fileType = file.type;
+                if (fileType.includes('image')) {
+                    // Handle image file
+                    const reader = new FileReader();
+                    reader.onload = function() {
+                        const img = new Image();
+                        img.src = reader.result;
+                        img.classList.add('uploaded-image');
+                        const imageName = document.createElement('p');
+                        imageName.textContent = file.name.split('.')[0].toUpperCase();
+                        imageName.classList.add('image-name');
+                        const container = document.createElement('div');
+                        container.classList.add('image-container');
+                        container.appendChild(img);
+                        container.appendChild(imageName);
+                        uploadedImageContainer.innerHTML = '';
+                        uploadedImageContainer.appendChild(container);
+
+                        // Voiceover for image name
+                        const utterance = new SpeechSynthesisUtterance(imageName.textContent);
+                        speechSynthesis.speak(utterance);
+                    }
+                    reader.readAsDataURL(file);
+                } else if (fileType.includes('video')) {
+                    // Handle video file
+                    console.log('Uploaded video:', file);
+                } else {
+                    console.log('Unsupported file type.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

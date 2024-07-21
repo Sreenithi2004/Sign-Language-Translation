@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide Sign Languages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4CAF50; /* Light Green */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            color: #333; /* Dark Gray */
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #fff; /* White */
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666; /* Light Gray */
+        }
+
+        .country {
+            display: inline-block;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 0.8s ease;
+            background-color: #fff; /* White */
+            border: 2px solid #4EA685; /* Light Green */
+        }
+
+        .country img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .country:hover img {
+            transform: scale(1.1);
+        }
+
+        .country .map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+
+        .animated-sentence {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .animated-sentence span {
+            animation: colorChange 1.5s infinite alternate; /* Animation for color change */
+        }
+
+        /* Keyframes for color change animation */
+        @keyframes colorChange {
+            0% {
+                color: #FF5733; /* Coral */
+            }
+            25% {
+                color: #9B59B6; /* Amethyst */
+            }
+            50% {
+                color: #3498DB; /* Peter River */
+            }
+            75% {
+                color: #2ECC71; /* Emerald */
+            }
+            100% {
+                color: #F1C40F; /* Sunflower */
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type=text] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            background-color: rgb(201, 197, 197);
+            color: rgb(5, 5, 5);
+            border:  none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button img {
+            width: 20px;
+            height: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+       <h1 style="color:black">SIGN LANGUAGE ACROSS THE WORLD</h1>
+        <p style="color:black">Sign languages are used by deaf and hard-of-hearing people around the world to communicate. Each country may have its own sign language or use a regional variation.Sign language varies widely across different countries, reflecting the linguistic diversity and cultural nuances of each region. In the United States and parts of Canada, American Sign Language (ASL) is predominant, with its own grammar and vocabulary separate from English. Meanwhile, in the United Kingdom, British Sign Language (BSL) is used, characterized by its distinct signs and grammar structures. Australia utilizes Australian Sign Language (Auslan), which has evolved from British Sign Language but incorporates unique signs and expressions.Each sign language is a rich and dynamic linguistic system, shaped by the cultural and historical context of its users, and serves as a vital means of communication and expression for deaf communities worldwide.</p>
+        <div class="search-container">
+            <form action="#" method="get" id="searchForm">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <br><br>
+
+        <img src="https://pbs.twimg.com/media/CnHsSd3W8AAymDG.jpg:large" style="width:600px;height:400px" alt="Sign Language">
+
+        <div class="country">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTs-3caTZEKeyxwz6ZY2fLYb-776zq5lvfYm1XPdja53jsoOpm1MhPdDohv10AyVQcuPo&usqp=CAU" align ="left"style="width:300px;height:250px">
+		    <h2>American Sign Language (ASL)</h2>
+            <p>American Sign Language (ASL) is the primary sign language used in the United States and Canada.American Sign Language is a rich and expressive visual language used primarily by the Deaf community in the United States and parts of Canada.  ASL is a distinct language with its own grammar and syntax, separate from spoken English. Through ASL, individuals can express complex ideas, emotions, and concepts without the need for spoken words.</p>
+        </div>
+
+        <div class="country">
+            <img src="https://www.nhsfife.org/media/usmic6xo/bsl-sign.png?width=1200&height=600&v=1da42f398b3fe70"align ="left" style="width:300px;height:250px">
+            <h2>British Sign Language (BSL)</h2>
+            <p>British Sign Language (BSL) is the primary language of the Deaf community in the United Kingdom, with its own grammar and syntax. It employs handshapes, facial expressions, and body movements to convey meaning effectively. BSL plays a vital role in fostering communication and cultural identity among Deaf individuals in the UK.</p>
+        </div>
+
+        <div class="country">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0kCWGNpOiYx5-VvR8eWg8Gd9eeoFb9R6X_9iQyHqKVt993jvjFig7a7r7Rb4-O-oP_IQ&usqp=CAU"align ="left" style="width:300px;height:250px">
+            <h2>Australian Sign Language (Auslan)</h2>
+            <p>Australian Sign Language (Auslan) serves as the main mode of communication for the Deaf community in Australia, featuring its unique vocabulary and grammar. Auslan utilizes handshapes, facial expressions, and body movements for expressive communication. Its recognition as an official language in Australia promotes accessibility and inclusion for Deaf individuals across the country.</p>
+        </div>
+
+        <div class="country">
+	        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRps3Ca3avVIILHuxHqLc10lrDNTCIzjMOo5g&usqp=CAU"align ="left" style="width:300px;height:250px">
+            <h2>Indian Sign Language (ISL)</h2>
+            <p>Indian Sign Language (ISL) is used by the Deaf community in India, displaying variations across different regions. ISL incorporates hand gestures, facial expressions, and body movements for effective communication. Despite challenges, efforts are underway to standardize ISL and promote its recognition as an official language, fostering greater inclusivity and accessibility for the Deaf in India.</p>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var searchInput = document.getElementsByName("search")[0].value;
+        if (searchInput.toLowerCase() === "ausl"|| searchInput.toLowerCase() === "australian sign language"|| searchInput.toLowerCase() === "australia") {
+            window.location.href = "repository/repo_ausl.html"; 
+        }else if (searchInput.toLowerCase() === "bsl"|| searchInput.toLowerCase() === "british sign language"|| searchInput.toLowerCase() === "british") {
+            window.location.href = "repository/repo_bsl.html"; 
+        }else if (searchInput.toLowerCase() === "asl"|| searchInput.toLowerCase() === "american sign language"|| searchInput.toLowerCase() === "america") {
+            window.location.href = "repository/repo_asl.html"; 
+        }else if (searchInput.toLowerCase() === "isl"|| searchInput.toLowerCase() === "indian sign language"|| searchInput.toLowerCase() === "india") {
+            window.location.href = "repository/repo_isl.html"; 
+        }else {
+            alert("No matching result found for " + searchInput);
+        }
+        });
+    </script>
+
+</body>
+</html>
